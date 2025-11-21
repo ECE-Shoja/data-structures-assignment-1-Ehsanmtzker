@@ -6,7 +6,8 @@ vector<int> parent, sz;
 int findSet(int v) {
     if (v == parent[v])
         return v;
-    return parent[v] = findSet(parent[v]);
+    parent[v] = findSet(parent[v]);
+    return parent[v];
 }
 
 void unionSet(int a, int b) {
